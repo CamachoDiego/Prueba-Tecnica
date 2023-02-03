@@ -31,6 +31,17 @@ class Busqueda{
             fila.insertCell(3).innerHTML= producto.Cantidad;
  });
  }
-    buscar(){}
+    buscar(id){
+   let busqueda = document.getElementById(id).value;
+   this.productos= this.productosBK;
+   this.productos=this.productos.filter(producto=>{
+    return producto.Categoria.toLowerCase().indexOf(busqueda) > -1;
+   });
+   this.onInit();
+}
 }
 let busqueda = new Busqueda();
+let form = document.getElementById("busquedaform");
+form.addEventListener("submit",()=>{
+    busqueda.buscar("valor");
+});
