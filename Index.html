@@ -2,15 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <title>Practica</title>
+    <link rel="stylesheet" href="estilo.css"/>
 </head>
 <h1>Prueba Tecnica</h1>
 <h2>Diego Andres Camacho Claros</h2>
 <body>
+    <h3>Categorias</h3>
+<div id= "buttons">
+        <button class= "button-value" onclick="filterProduct('all')">Todo</button>
+        <button class= "button-value"onclick="filterProduct('Lacteos')">Lacteos</button>
+        <button class= "button-value"onclick="filterProduct('Carnes')">Carnes</button>
+        <button class= "button-value"onclick="filterProduct('Enlatados')">Enlatados</button>
+        <button class= "button-value"onclick="filterProduct('Granos')">Granos</button>
+        <button class= "button-value"onclick="filterProduct('Limpiar')">Limpiar</button>
+
+    </div>
 
     <div class="container"> 
-        <form action="javascript:void(0);"id="busquedaform"><input type="text" id="valor"><button>Enviar</button 
+        <form action="javascript:void(0);"id="busquedaform"><input type="text" id="valor"><button>Buscar</button 
             ></form>
         <table>
             <thead>
@@ -26,13 +36,8 @@
 
 
     </div>
-    <style>
-        th,td{
-            text-align: center;
-            padding: 8px;
-            border: solid blue 1px;
-        }
-    </style>
+
+  
     <script src="Practica.js"></script>
 </body>
 </html>

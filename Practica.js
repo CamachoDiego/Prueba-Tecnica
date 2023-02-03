@@ -18,6 +18,7 @@ class Busqueda{
         this.onInit();
         console.log(this.productos);
     }
+    
     onInit(){
         let cuerpo = document.getElementById("cuerpo");
         while(cuerpo.rows.length > 0){
@@ -31,6 +32,7 @@ class Busqueda{
             fila.insertCell(3).innerHTML= producto.Cantidad;
  });
  }
+  
     buscar(id){
    let busqueda = document.getElementById(id).value;
    this.productos= this.productosBK;
@@ -45,3 +47,17 @@ let form = document.getElementById("busquedaform");
 form.addEventListener("submit",()=>{
     busqueda.buscar("valor");
 });
+
+function filterProduct(value) {
+    let buttons=document.querySelectorAll(".button-value");
+    buttons.forEach((button) =>{
+        if (value.toUpperCase()==button.innerText.toUpperCase()){
+            button.classList.add("active");
+        }else{
+            button.classList.remove("active");
+        }
+    }); 
+}
+window.onload=()=>{
+    filterProduct("all");
+};
